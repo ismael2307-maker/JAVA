@@ -1,0 +1,17 @@
+Primera vez:
+1-Crear un repositorio en GitHub
+2-Abrir git en la carpeta seleccionada.
+3-Escribir el comando: git init
+4-Escribir el comando: git status
+5-Escribir el comando: git add .
+6-Escribir el comando: git commit -m ""
+7-Escribir el comando: git remote add origin (Aqui va el link del repositorio)
+8-git push -u origin master
+
+Segunda vez:
+1-Escribir el comando: git status
+2-Escribir el comando: git add .
+3-Escribir el comando: git commit -m ""
+4-git push -u origin master
+
+
