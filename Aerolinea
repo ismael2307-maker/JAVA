@@ -1,0 +1,104 @@
+import java.util.Scanner;
+public class App {
+    public static void main(String[] args) throws Exception {
+        Scanner x=new Scanner(System.in);
+       String usuarioCorrecto="Ismael";
+       String ContraseñaCorrecta="ano";
+       int intentos=0,operacion,AsientosDis=10,ola=1;
+       double Precio=100;
+       String usuario=" ",contraseña="";
+
+
+        while(usuarioCorrecto.equals(usuario)==false && ContraseñaCorrecta.equals(contraseña)==false && (intentos<3)){
+         intentos++;
+         System.out.print("Digite su nombre de usuario: ");
+         usuario=x.next();
+
+         System.out.print("Digite su contraseña: ");
+         contraseña=x.next();
+
+         if(usuarioCorrecto.equals(contraseña)==false && ContraseñaCorrecta.equals(contraseña)){
+
+         }
+ 
+        }
+        if(intentos==3){
+            System.out.println("No se han ingresado los datos correspondientes. ");
+            System.out.println("Ha intentado muchas veces, regresa mas tarde");
+        }else{
+       
+          System.out.println("ACCESO PERMITIDO");
+           do{
+          System.out.println("\n   MENU   ");
+          System.out.println("1.-Adquirir Boletos 2.-Cancelar Boletos 3.-Ver boletos Disponibles 4.-Salir");
+        
+         System.out.print("Seleccione su opcion: ");
+         operacion=x.nextInt();
+        
+        switch(operacion){
+            case 1:{
+                System.out.print("Ingrese su nombre y apellidos: ");
+                String nombreApellidos = x.next();
+
+                System.out.print("Ingrese su correo electrónico: ");
+                String correo = x.next();
+
+                System.out.print("Ingrese su número de celular: ");
+                int celular = x.nextInt();
+
+                System.out.print(" Ingrese el número de asientos a comprar (1-3): ");
+                int numAsientosComprar = x.nextInt();
+
+                if (numAsientosComprar >= 1 && numAsientosComprar <= 3) {
+                    if (numAsientosComprar <= AsientosDis) {
+                        AsientosDis -= numAsientosComprar;
+                        double total = numAsientosComprar * Precio;
+                        System.out.println("\n    Factura    ");
+                        System.out.println("Nombre y Apellidos: " + nombreApellidos);
+                        System.out.println("Correo Electrónico: " + correo);
+                        System.out.println("Número de Celular: " + celular);
+                        System.out.println("Número de Asientos Comprados: " + numAsientosComprar);
+                        System.out.println("Monto a Pagar: C$" + total);
+                    } else {
+                        System.out.println("No hay suficientes asientos disponibles.");
+                    }
+                } else {
+                    System.out.println("Cantidad de asientos no válida. Debe ser entre 1 y 3.");
+                }
+               
+
+             break;           
+            }
+            case 2:{
+                System.out.print("Ingrese su nombre y apellidos: ");
+                String nombreCancelar = x.next();
+                
+                System.out.print("Número de asiento a cancelar: ");
+                int numAsientoCancelar = x.nextInt();   
+                
+                if (numAsientoCancelar > 0 && numAsientoCancelar <= 10) {
+                    AsientosDis++;
+                    System.out.println("Asiento " + numAsientoCancelar + " cancelado exitosamente.");
+                } else {
+                    System.out.println("Número de asiento no válido.");
+                }
+               
+             break;
+            }
+            case 3:{
+                System.out.print("Asientos disponibles: " + AsientosDis);
+                break;
+            }
+            case 4:{
+                System.out.println("Muchas Gracias. Vuelva pronto");
+             break;
+            }
+        }
+
+       }while(operacion<=0 || operacion !=4);
+
+     }// cierre del else de la linea 27
+
+       x.close();
+    }
+}
