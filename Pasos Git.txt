@@ -1,4 +1,7 @@
 Primera vez:
+ git config --global user.name ""
+ git config --global user.email ""
+
 1-Crear un repositorio en GitHub
 2-Abrir git en la carpeta seleccionada.
 3-Escribir el comando: git init
